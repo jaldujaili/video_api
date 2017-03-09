@@ -1,7 +1,7 @@
-# module Jsonifiable
+module Jsonfiable
 
-#   def to_h
-#     attributes.compact.merge({})
-#   end
+  def to_h
+    attributes.compact.merge({})
+  end
 
-# end
+end

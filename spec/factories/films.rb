@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :film do
-    title "MyString"
-    description "MyString"
-    url_slug "MyString"
-    year 1
+  	title {Faker::Book.title}
+  	description {Faker::Lorem.sentence}
+  	url_slug {Faker::Internet.url}
+    year {rand(1920..2017)}
   end
 end

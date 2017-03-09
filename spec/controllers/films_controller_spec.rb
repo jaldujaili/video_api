@@ -52,20 +52,8 @@ RSpec.describe FilmsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new film as @film" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:film)).to be_a_new(Film)
-    end
-  end
 
-  describe "GET #edit" do
-    it "assigns the requested film as @film" do
-      film = Film.create! valid_attributes
-      get :edit, params: {id: film.to_param}, session: valid_session
-      expect(assigns(:film)).to eq(film)
-    end
-  end
+
 
   describe "POST #create" do
     context "with valid params" do

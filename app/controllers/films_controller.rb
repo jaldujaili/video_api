@@ -6,7 +6,7 @@ class FilmsController < ApplicationController
     @films = Film.all
     binding.pry
 
-    render json: {films: @films}
+    render json: {films: @films.map(&:to_h)}
   end
 
   # GET /films/1
@@ -16,8 +16,8 @@ class FilmsController < ApplicationController
 
   # POST /films
   def create
-    @film = Film.new(film_params)
 
+    @film = Film.new(film_params)
     if @film.save
       render json: @film, status: :created, location: @film
     else
