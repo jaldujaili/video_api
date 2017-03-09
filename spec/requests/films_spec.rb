@@ -4,11 +4,13 @@ RSpec.describe "Films", type: :request do
 
 	let!(:films){create_list(:film, 10)}
 	let(:film_id){films.first.id}
+  # need to create relations in order to pass tests
 
   describe "GET /films" do
     before {get '/films'}
 
     it 'returns films' do
+      binding.pry
     	expect(json).not_to be_empty
       
     	expect(films.size).to eq(10)
@@ -42,29 +44,5 @@ RSpec.describe "Films", type: :request do
     end
   end
 
-  describe 'POST /films' do
-    # valid payload
-
-    let(:valid_attributes) { { film:{title: 'Learn Elm'} } }
-
-    context 'when the request is valid' do
-      before { post '/films', params: valid_attributes }
-
-      it 'creates a film' do
-        expect(json['title']).to eq('Learn Elm')
-      end
-
-      it 'returns status code 201' do
-        expect(response).to have_http_status(201)
-      end
-    end
-  end
-
-  describe 'DELETE /films/:id' do
-    before { delete "/films/#{film_id}" }
-
-    it 'returns status code 204' do
-      expect(response).to have_http_status(204)
-    end
-  end
+  
 end

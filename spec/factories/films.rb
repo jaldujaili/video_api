@@ -4,5 +4,6 @@ FactoryGirl.define do
   	description {Faker::Lorem.sentence}
   	url_slug {Faker::Internet.url}
     year {rand(1920..2017)}
+    relation_id {1}
   end
 end

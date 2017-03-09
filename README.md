@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version ==> 2.3.1p112
+rails 5.0.1
 
-Things you may want to cover:
+* Database creation ==> postgresql
 
-* Ruby version
+Need to change username to your username in database.yml,
+bundle install,
+rake db:migrate,
+rake db:setup, which will also seed the database.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

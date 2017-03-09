@@ -1,9 +1,10 @@
 class Film < ApplicationRecord
-# has_many :related_films
-has_many :relations
+belongs_to :relation, optional: true
+has_many :ratings
+has_many :users, through: :ratings
+
 
 	def to_h
-		binding.pry
-		super.merge(relations: relations.map(&:to_h))
+		super.merge(related_film_ids: relation.films.ids, ratings_average: ratings.map(&:avg_rating).first)
 	end
 end
